@@ -10,9 +10,13 @@ def book_data_export(data_dict: dict):
             writer = csv.writer(f)
             writer.writerow((data_dict.keys()))
 
-    # export data
-    with open(file_path, 'a') as d:
-        writer = csv.writer(d)
-        writer.writerow((data_dict.values()))
+    # export data if there is data in the dictionary
+    if len(data_dict) > 0:
+        with open(file_path, 'a') as d:
+            writer = csv.writer(d)
+            writer.writerow((data_dict.values()))
 
-    print("export book's information with success !")
+        print("export book's information with success !")
+
+    else:
+        print("There is no Data to export.")

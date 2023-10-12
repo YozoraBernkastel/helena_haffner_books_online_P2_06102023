@@ -1,4 +1,4 @@
-from library.scrap_functions import *
+from library.scrap_book_function import *
 
 
 def main():

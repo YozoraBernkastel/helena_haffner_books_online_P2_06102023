@@ -40,8 +40,8 @@ def get_book_data(url):
         book_data["category"] = breadcrumb_class_table.find_all("a")[2].text
 
         book_data["review_rating"] = td_table[6].text
-        # temporary
-        # print(book_data)
+
+        # Call for the export function
         book_data_export(book_data)
 
     else:
