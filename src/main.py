@@ -1,18 +1,24 @@
-from library.scrap_book_function import *
-from library.scrap_category import scrap_all_category_books
+from library.srap_data_routeur import scrap_datas
 
 
 def main():
-    # url = "https://books.toscrape.com/catalogue/the-mysterious-affair-at-styles-hercule-poirot-1_452/index.html"
-    # url_two = "https://books.toscrape.com/catalogue/misery_334/index.html"
-    # url_three = "https://books.toscrape.com/catalogue/misery_332/index.html"
-    # get_book_data(url)
-    # get_book_data(url_two)
-    # get_book_data(url_three)
+    url = "https://books.toscrape.com/index.html"
+    url_two = "https://books.toscrape.com/catalogue/misery_334/index.html"
+    url_three = "https://books.toscrape.com/catalogue/misery_332/index.html"
     category_url = "https://books.toscrape.com/catalogue/category/books/mystery_3/index.html"
-    scrap_all_category_books(category_url)
+
+    # home url
+    scrap_datas(url)
+
+    # book url
+    scrap_datas(url_three)
+
+    # false url
+    scrap_datas(url_two)
+
+    # category url
+    scrap_datas(category_url)
 
 
 if __name__ == '__main__':
     main()
-
