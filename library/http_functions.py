@@ -5,6 +5,6 @@ def check_url(url) -> bool:
     if is_url_exist:
         print("This url is valid")
     else:
-        print("This url is not valid")
+        print("ERROR 404 -> This page doesn't exist")
 
     return is_url_exist

@@ -4,7 +4,6 @@ import csv
 
 
 def book_data_export(data_dict: dict):
-
     if not path.exists("../outputs"):
         os.makedirs("../outputs")
 
@@ -21,7 +20,7 @@ def book_data_export(data_dict: dict):
             writer = csv.writer(d)
             writer.writerow((data_dict.values()))
 
-        print("export book's information with success !")
+        print("export " + data_dict["Title"] + " data with success !")
 
     else:
         print("There is no Data to export.")

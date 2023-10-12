@@ -1,6 +1,6 @@
+from export_library.book_data_export import book_data_export
 from library.http_functions import check_url
 from bs4 import BeautifulSoup
-from export_library.book_data_export import book_data_export
 import requests
 import re
 
@@ -47,5 +47,4 @@ def get_book_data(url):
         # Call for the export function
         book_data_export(book_data)
 
-    else:
-        print("ERROR 404 -> This page doesn't exist")
+
