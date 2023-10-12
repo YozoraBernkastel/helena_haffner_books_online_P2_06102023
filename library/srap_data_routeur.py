@@ -9,11 +9,11 @@ def scrap_datas(url):
 
     # if the url exist, check it's the home, a category or a book's page then call the right function
     if check_url(url_page):
-        type_of_url = url_type(url)
-        if type_of_url == "home":
-            print("Welcome home")
-        elif type_of_url == "category":
-            scrap_all_category_books(url)
-        else:
-            get_book_data(url)
+        match url_type(url):
+            case"home":
+                print("Welcome home")
+            case "category":
+                scrap_all_category_books(url)
+            case _:
+                get_book_data(url)
 
