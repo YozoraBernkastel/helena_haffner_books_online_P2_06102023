@@ -41,6 +41,9 @@ def get_book_data(url):
 
         book_data["Review_rating"] = td_table[6].text
 
+        # scrap the cover image's url
+        img_url = soup.find("img")["src"]
+        book_data["Image_URL"] = "https://books.toscrape.com" + img_url[5:]
         # Call for the export function
         book_data_export(book_data)
 
