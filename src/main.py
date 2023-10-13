@@ -11,13 +11,13 @@ def main():
     scrap_datas(url)
 
     # book url
-    scrap_datas(url_three)
+    # scrap_datas(url_three)
 
     # false url
-    scrap_datas(url_two)
+    # scrap_datas(url_two)
 
     # category url
-    scrap_datas(category_url)
+    # scrap_datas(category_url)
 
 
 if __name__ == '__main__':

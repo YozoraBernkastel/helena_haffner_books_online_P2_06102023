@@ -7,7 +7,7 @@ import re
 
 def get_book_data(url):
     url_page = requests.get(url)
-
+    # in case the function is directly call by the user
     if check_url(url_page):
         book_data = {"Product_page_url": url}
 
@@ -20,8 +20,8 @@ def get_book_data(url):
         # then push each needed element in a dictionary in the right order.
         book_data["Universal_product_code"] = td_table[0].text
         book_data["Title"] = soup.find('h1').text
-        book_data["Price_including_tax"] = td_table[3].text
-        book_data["Price_excluding_tax"] = td_table[2].text
+        book_data["Price_including_tax"] = td_table[3].text[1:]
+        book_data["Price_excluding_tax"] = td_table[2].text[1:]
 
         # scrap the number only
         book_data["Number_available"] = re.findall('[0-9]+', td_table[5].text)

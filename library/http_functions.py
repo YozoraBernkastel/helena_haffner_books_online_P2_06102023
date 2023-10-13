@@ -3,8 +3,8 @@ import requests
 
 
 def check_url(url) -> bool:
-    is_url_exist = url.status_code == 200
-    return is_url_exist
+    #  todo HHA -> need to check if the url corresponding to the site
+    return url.status_code == 200
 
 
 def url_type(url):
