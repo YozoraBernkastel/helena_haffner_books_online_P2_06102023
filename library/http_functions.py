@@ -3,7 +3,6 @@ import requests
 
 
 def check_url(url) -> bool:
-    #  todo HHA -> need to check if the url corresponding to the site
     return url.status_code == 200
 
 
