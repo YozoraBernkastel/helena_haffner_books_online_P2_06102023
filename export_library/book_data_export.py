@@ -1,11 +1,12 @@
 import os
+import urllib.request
 from os import path, stat
 import csv
 
 
 def book_data_export(data_dict: dict):
     if not path.exists("../outputs/csv/"):
-        os.makedirs("../outputs/csv")
+        os.makedirs("../outputs/csv/")
 
     file_path = "../outputs/csv/" + data_dict["Category"] + "_export.csv"
     # if the file doesn't exist or if it is empty, write the header by using the keys from data_dict
@@ -24,3 +25,11 @@ def book_data_export(data_dict: dict):
 
     else:
         print("There is no Data to export.")
+
+
+def save_cover(upc, category, url):
+    if not path.exists("../outputs/img/" + category + "/"):
+        os.makedirs("../outputs/img/" + category + "/")
+
+    file_path = "../outputs/img/" + category + "/" + upc + url[77:]
+    urllib.request.urlretrieve(url, file_path)
