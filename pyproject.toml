@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "helena-haffner-books-online-p2-06102023"
+version = "0.1.0"
+description = "scrapper of data's books for books online (OCR Project 2)"
+authors = ["Helena Haffner - helaena.haffner@gmail.com"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.31.0"
+beautifulsoup4 = "^4.12.2"
+html5lib = "^1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

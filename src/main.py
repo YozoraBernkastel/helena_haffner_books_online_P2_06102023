@@ -4,7 +4,7 @@ from library.srap_data_routeur import scrap_datas
 def main():
     url = "https://books.toscrape.com/index.html"
     url_two = "https://books.toscrape.com/catalogue/misery_334/index.html"
-    url_three = "https://books.toscrape.com/catalogue/misery_332/index.html"
+    url_three = "https://books.toscrape.com/catalogue/the-mysterious-affair-at-styles-hercule-poirot-1_452/index.html"
     category_url = "https://books.toscrape.com/catalogue/category/books/mystery_3/index.html"
 
     # home url

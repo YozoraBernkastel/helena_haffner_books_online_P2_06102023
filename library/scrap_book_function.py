@@ -1,4 +1,4 @@
-from export_library.book_data_export import book_data_export
+from export_library.book_data_export import book_data_export, save_cover
 from library.http_functions import check_url
 from bs4 import BeautifulSoup
 import requests
@@ -39,7 +39,10 @@ def get_book_data(url):
         # scrap the cover image's url
         img_url = soup.find("img")["src"]
         book_data["Image_URL"] = "https://books.toscrape.com" + img_url[5:]
-        # Call for the export function
+
+        # Call for the exports functions
+        save_cover(book_data["Universal_product_code"], book_data["Category"], book_data["Image_URL"])
         book_data_export(book_data)
+
 
 
