@@ -4,7 +4,8 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def scrap_all_category_books(url):
+# scrap all the books of one category
+def scrap_one_category(url):
     url_page = requests.get(url)
 
     while check_url(url_page):

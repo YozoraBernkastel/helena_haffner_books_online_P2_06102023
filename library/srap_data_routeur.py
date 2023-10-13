@@ -1,5 +1,5 @@
 from library.scrap_all import scrap_all
-from library.scrap_category import scrap_all_category_books
+from library.scrap_category import scrap_one_category
 from library.scrap_book_function import get_book_data
 from library.http_functions import url_type, check_url
 import requests
@@ -14,7 +14,7 @@ def scrap_datas(url):
             case"home":
                 scrap_all(url)
             case "category":
-                scrap_all_category_books(url)
+                scrap_one_category(url)
             case _:
                 get_book_data(url)
 
