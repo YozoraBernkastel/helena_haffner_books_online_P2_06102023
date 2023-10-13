@@ -4,7 +4,8 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def scrap_all_category_books(url):
+# scrap all the books of one category
+def scrap_one_category(url):
     url_page = requests.get(url)
 
     while check_url(url_page):
@@ -12,7 +13,7 @@ def scrap_all_category_books(url):
         library = soup.find_all("article", class_="product_pod")
         for book in library:
             book_url = book.find("a")["href"]
-            get_book_data("https://books.toscrape.com/catalogue/" + book_url[5:])
+            get_book_data("https://books.toscrape.com/catalogue/" + book_url[9:])
 
         link_to_next = soup.find("li", class_="next")
         if link_to_next:

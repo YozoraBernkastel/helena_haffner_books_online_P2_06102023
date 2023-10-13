@@ -1,4 +1,4 @@
-from library.scrap_category import scrap_all_category_books
+from library.scrap_category import scrap_one_category
 from library.http_functions import check_url
 from bs4 import BeautifulSoup
 import requests
@@ -19,4 +19,4 @@ def scrap_all(url):
             # The other possibility is to scrap this category only.
             if category_url != "catalogue/category/books_1/index.html":
                 print(category_name)
-                scrap_all_category_books("https://books.toscrape.com/" + category_url)
+                scrap_one_category("https://books.toscrape.com/" + category_url)

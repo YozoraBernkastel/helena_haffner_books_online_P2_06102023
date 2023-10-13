@@ -5,6 +5,21 @@ import requests
 import re
 
 
+def star_rating_check(soup):
+    if soup.find("p", class_="One"):
+        return 1
+    elif soup.find("p", class_="Two"):
+        return 2
+    elif soup.find("p", class_="Three"):
+        return 3
+    elif soup.find_all("p", class_="Four"):
+        return 4
+    elif soup.find("p", class_="Five"):
+        return 5
+    else:
+        return 0
+
+
 def get_book_data(url):
     url_page = requests.get(url)
     # in case the function is directly call by the user
@@ -20,11 +35,11 @@ def get_book_data(url):
         # then push each needed element in a dictionary in the right order.
         book_data["Universal_product_code"] = td_table[0].text
         book_data["Title"] = soup.find('h1').text
-        book_data["Price_including_tax"] = td_table[3].text[1:]
-        book_data["Price_excluding_tax"] = td_table[2].text[1:]
+        book_data["Price_including_tax in " + td_table[3].text[1]] = td_table[3].text[2:]
+        book_data["Price_excluding_tax in " + td_table[2].text[1]] = td_table[2].text[2:]
 
         # scrap the number only
-        book_data["Number_available"] = re.findall('[0-9]+', td_table[5].text)
+        book_data["Number_available"] = re.findall('[0-9]+', td_table[5].text)[0]
 
         # scrap the description of the book in the metadata -> possibility to scrap it in the <article> tag with
         # the class product_page too.
@@ -34,7 +49,9 @@ def get_book_data(url):
         breadcrumb_class_table = soup.find("ul", class_="breadcrumb")
         book_data["Category"] = breadcrumb_class_table.find_all("a")[2].text
 
-        book_data["Review_rating"] = td_table[6].text
+        # scrap the review rating
+        product_main = soup.find("div", class_="product_main")
+        book_data["Review_rating"] = star_rating_check(product_main)
 
         # scrap the cover image's url
         img_url = soup.find("img")["src"]
@@ -43,6 +60,3 @@ def get_book_data(url):
         # Call for the exports functions
         save_cover(book_data["Universal_product_code"], book_data["Category"], book_data["Image_URL"])
         book_data_export(book_data)
-
-
-
