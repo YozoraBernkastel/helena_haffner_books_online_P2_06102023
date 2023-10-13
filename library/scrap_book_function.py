@@ -20,8 +20,8 @@ def get_book_data(url):
         # then push each needed element in a dictionary in the right order.
         book_data["Universal_product_code"] = td_table[0].text
         book_data["Title"] = soup.find('h1').text
-        book_data["Price_including_tax"] = td_table[3].text[1:]
-        book_data["Price_excluding_tax"] = td_table[2].text[1:]
+        book_data["Price_including_tax in " + td_table[3].text[1]] = td_table[3].text[2:]
+        book_data["Price_excluding_tax in " + td_table[2].text[1]] = td_table[2].text[2:]
 
         # scrap the number only
         book_data["Number_available"] = re.findall('[0-9]+', td_table[5].text)
