@@ -1,14 +1,6 @@
 # helena_haffner_books_online_P2_06102023
-Environnement Virtuel utilisé : Poetry
 
-Installation: curl -sSL https://install.python-poetry.org | python3 -
-
-Activer l'environnement virtuel : poetry shell
-
-Installer les dépendances : poetry install  (les fichiers pyproject.toml ou poetry.lock doivent être présents dans le dossier et qui sont l'équivalent de requirements.txt)
-
-Sortir de l'environnemetn virtuel : exit
-
+## Description du programme
 Script servant à récupérer les informations de chaque livres présents sur le site https://books.toscrape.com/index.html afin de les ajouter à un csv en fonction de la catégorie à laquelle appartient le livre.
 Ce ou ces exports sont créés dans le dossier ouptuts/csv/catégorie/.
 En plus des informations textuelles, les couvertures sont également téléchargées dans le dossier outputs/img/catégorie/.
@@ -24,6 +16,34 @@ Pour l'heure, aucune interface ne permet de donner directement au script une URL
 L'environnement virtuel utilisé pour ce projet est Poetry.
 
 Ce projet s'inscrit dans le cadre d'une formation Python et vise un site destiné à apprendre la récupération d'informations sur internet.
+
+## Environnement Virtuel
+Environnement Virtuel utilisé : Poetry
+
+Installation:
+```shell
+curl -sSL https://install.python-poetry.org | python3 - 
+```
+
+Activer l'environnement virtuel : 
+```shell
+poetry shell
+```
+Installer les dépendances (les fichiers pyproject.toml ou poetry.lock doivent être présents dans le dossier et qui sont l'équivalent de requirements.txt): 
+```shell
+poetry install 
+```
+Sortir de l'environnement virtuel : 
+```shell
+exit
+```
+
+## Lancer le programme
+Dans le terminal, à la racine du projet :
+```shell
+python3 main.py
+```
+
 
 
 
