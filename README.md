@@ -1,7 +1,10 @@
 # helena_haffner_books_online_P2_06102023
 Environnement Virtuel utilisé : Poetry
+
 Installation: curl -sSL https://install.python-poetry.org | python3 -
+
 Activer l'environnement virtuel : poetry shell
+
 Installer les dépendances : poetry install  (les fichiers pyproject.toml ou poetry.lock doivent être présents dans le dossier et qui sont l'équivalent de requirements.txt)
 
 Script servant à récupérer les informations de chaque livres présents sur le site https://books.toscrape.com/index.html afin de les ajouter à un csv en fonction de la catégorie à laquelle appartient le livre.
