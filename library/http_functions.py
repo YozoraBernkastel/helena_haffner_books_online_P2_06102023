@@ -7,7 +7,8 @@ def check_url(url) -> bool:
 
 
 def url_type(url):
-    if url == "https://books.toscrape.com/index.html":
+    if (url == "https://books.toscrape.com/index.html" or "https://books.toscrape.com/"
+            or "https://books.toscrape.com"):
         return "home"
     else:
         soup = BeautifulSoup(requests.get(url).text, 'html5lib')
