@@ -7,6 +7,8 @@ Activer l'environnement virtuel : poetry shell
 
 Installer les dépendances : poetry install  (les fichiers pyproject.toml ou poetry.lock doivent être présents dans le dossier et qui sont l'équivalent de requirements.txt)
 
+SOrtir de l'environnemetn virtuel : exit
+
 Script servant à récupérer les informations de chaque livres présents sur le site https://books.toscrape.com/index.html afin de les ajouter à un csv en fonction de la catégorie à laquelle appartient le livre.
 Ce ou ces exports sont créés dans le dossier ouptuts/csv/catégorie/.
 En plus des informations textuelles, les couvertures sont également téléchargées dans le dossier outputs/img/catégorie/.
