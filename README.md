@@ -10,7 +10,7 @@ Ainsi, avec l'URL de la page d'accueil, le script va parcourir chaque catégorie
 Si l'URL utilisé est celle d'une catégorie, le script récupérera uniquement les informations des livres de cette catégorie précise.
 ENfin, si l'URL renvoit sur la page d'un livre particulier, seules les informations de ce livre seront récupérées exportées.
 
-Pour lancer le programme, allez dans le dossier du projet puis, dans un terminal, utilisez la commande python3 main.py.
+Pour lancer le programme, allez dans le dossier du projet puis, dans un terminal, utilisez la commande poetry run python3 main.py.
 Pour l'heure, aucune interface ne permet de donner directement au script une URL, il faudra donc aller sur la page main.py et changer l'url des variables ou en l'ajoutant directement comme argument de la fonction scrap_datas(argument).
 
 L'environnement virtuel utilisé pour ce projet est Poetry.
