@@ -38,10 +38,10 @@ Sortir de l'environnement virtuel :
 exit
 ```
 
-## Lancer le programme
+## Lancer le programme depuis l'environnement virtuel
 Dans le terminal, à la racine du projet :
 ```shell
-python3 main.py
+poetry run python3 main.py
 ```
 
 
