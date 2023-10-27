@@ -1,0 +1,9 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+.idea
+/outputs/
+poetry.lock
+/library/__pycache__/
+/export_library/__pycache__/
+/outputs/data_export.csv
